@@ -1,0 +1,58 @@
+
+~~~~ CRIANDO A TABELA ANIMAL: ~~~~
+
+CREATE TABLE animal (
+	codAnimal INTEGER CONSTRAINT pk_idAnimal PRIMARY KEY,
+	nome VARCHAR(255) NOT NULL,
+	raça VARCHAR(150) NOT NULL,
+	sexo VARCHAR(150) NOT NULL,
+	cor VARCHAR(150) NOT NULL,
+	codDono INTEGER
+);
+__________________________________________________________________________________
+
+SELECT * FROM animal
+
+~~~~ INSERINDO DADOS NA TABELA ANIMAL: ~~~~
+
+INSERT INTO animal (codanimal, nome, raça, sexo, cor, coddono ) VALUES (1, 'max', 'pug', 'femea', 'preto', 1);
+INSERT INTO animal (codanimal, nome, raça, sexo, cor, coddono ) VALUES (2, 'rex', 'vira-lata', 'macho', 'caramelo', 1);
+INSERT INTO animal (codanimal, nome, raça, sexo, cor, coddono ) VALUES (3, 'balde', 'pastor animal', 'macho', 'caramelo', 4);
+INSERT INTO animal (codanimal, nome, raça, sexo, cor, coddono ) VALUES (4, 'pompeu', 'boxer', 'macho', 'castanho', 3);
+INSERT INTO animal (codanimal, nome, raça, sexo, cor, coddono ) VALUES (5, 'pinga', 'poodle', 'femea', 'branco', 2);
+__________________________________________________________________________________
+
+~~~~ CRIANDO A TABELA DONO:~~~~
+
+CREATE TABLE Dono (
+	codDono INTEGER,
+	nome VARCHAR(150) NOT NULL,
+	bairro VARCHAR(150) NOT NULL
+);
+__________________________________________________________________________________
+
+SELECT * FROM Dono
+
+~~~~ INSERINDO DADOS NA TABELA DONO:~~~~
+
+INSERT INTO Dono (coddono, nome, bairro) VALUES (1, 'joao', 'vila nova');
+INSERT INTO Dono (coddono, nome, bairro) VALUES (2, 'maria', 'centro');
+INSERT INTO Dono (coddono, nome, bairro) VALUES (3, 'joquim', 'centro');
+INSERT INTO Dono (coddono, nome, bairro) VALUES (4, 'ana', 'alto vale');
+__________________________________________________________________________________
+
+~~~~ PESQUISANDO NOME DOS PETS CUJO DONOS MORAM NO BAIRRO VILA NOVA:~~~~
+
+SELEC animal.nome, Dono.bairro
+FROM animal, Dono
+WHERE bairro = 'vila nova' AND animal.coddono = Dono.coddono;
+
+__________________________________________________________________________________
+
+~~~~ CONSULTANDO A QUANTIDADE DE PETS QUE CADA DONO TEM: ~~~~
+
+SELECT Dono.nome, 
+COUNT(animal.nome) 
+FROM animal 
+INNER JOIN Dono ON Dono.coddono = animal.coddono
+GROUP BY Dono.nome;
