@@ -1,0 +1,14 @@
+{
+  "name": "funcoes_matematicas",
+  "version": "1.0.0",
+  "description": "array com 5 números reais, e para cada elemento utilize funções matemáticas para exibir",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "\"node ./src/main.js\""
+  },
+  "author": "VLO",
+  "license": "ISC"
+}
