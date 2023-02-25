@@ -1,0 +1,14 @@
+{
+  "name": "array",
+  "version": "1.0.0",
+  "description": "array com 10 elementos usando cada uma das estruturas de repetição: while, do-while, for e foreach",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "\"node ./src/main.js\""
+  },
+  "author": "VLO",
+  "license": "ISC"
+}
