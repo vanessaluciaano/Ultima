@@ -1,0 +1,20 @@
+{
+  "name": "exemplo_aulam3w3",
+  "version": "1.0.0",
+  "description": "exemplo semana 3",
+  "main": "main.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "node ./src/main.js"
+  },
+  "keywords": [
+    "template"
+  ],
+  "author": "Carlos Oliveira",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
